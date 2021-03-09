@@ -10,19 +10,20 @@ const CountryDetail = () => {
       .then((res) => res.json())
       .then((data) => setCountry(data[0]));
   }, [name]);
-  const countryDetailStyle = {
-    border: "1px solid goldenrod",
-    margin: "50px",
-    padding: "50px",
-    borderRadius: "50px",
-  };
   return (
-    <div style={countryDetailStyle}>
-      <h1>Welcome!</h1>
-      <p>Name: {country.name}</p>
-      <p>Capital: {country.capital}</p>
-      <p>Population: {country.population}</p>
-      <p>Region: {country.region}</p>
+    <div style={{ width: "50%", margin: "auto 30%" }}>
+      <div>
+        <h1 style={{ textAlign: "center", color: "goldenrod" }}>
+          Welcome to {country.name}!
+        </h1>
+        <img className="w-100 h-100 mt-2" src={country.flag} alt="" />
+        <div className="mt-2" style={{ textAlign: "center" }}>
+          <h3>Name: {country.name}</h3>
+          <h5>Capital: {country.capital}</h5>
+          <h6>Population: {country.population}</h6>
+          <h6>Region: {country.region}</h6>
+        </div>
+      </div>
     </div>
   );
 };
